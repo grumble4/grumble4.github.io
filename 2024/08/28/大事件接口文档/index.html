@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="大事件接口文档-V1.01. 用户相关接口1.1 注册1.1.1 基本信息 请求路径：&#x2F;user&#x2F;register 请求方式：POST 接口描述：该接口用于注册新用户  1.1.2 请求参数请求参数格式：x-www-form-urlencoded 请求参数说明：    参数名称 说明 类型 是否必须 备注    username 用户名 string 是 5~16位非空字符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/08/28/%E5%A4%A7%E4%BA%8B%E4%BB%B6%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="大事件接口文档-V1.01. 用户相关接口1.1 注册1.1.1 基本信息 请求路径：&#x2F;user&#x2F;register 请求方式：POST 接口描述：该接口用于注册新用户  1.1.2 请求参数请求参数格式：x-www-form-urlencoded 请求参数说明：    参数名称 说明 类型 是否必须 备注    username 用户名 string 是 5~16位非空字符">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-08-28T13:07:23.384Z">
+<meta property="article:modified_time" content="2023-10-22T14:33:07.307Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>John Doe</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(2)</small>
+            
+        </div>
+    </li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="2">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2024/08/28/%E5%A4%A7%E4%BA%8B%E4%BB%B6%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2024-08-28 21:07:23">2024/08/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2024/08/28/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2024-08-28 20:50:52">2024/08/28</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-大事件接口文档" class="article article-type-post" itemscope itemprop="blogPost">
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2023-10-22 22:33:07'>2024-08-28 21:07</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%A7%E4%BA%8B%E4%BB%B6%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3-V1-0"><span class="toc-text">大事件接口文档-V1.0</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3"><span class="toc-text">1. 用户相关接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%B3%A8%E5%86%8C"><span class="toc-text">1.1 注册</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">1.1.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">1.1.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">1.1.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%99%BB%E5%BD%95"><span class="toc-text">1.2 登录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">1.2.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">1.2.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">1.2.3 响应数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-4-%E5%A4%87%E6%B3%A8%E8%AF%B4%E6%98%8E"><span class="toc-text">1.2.4 备注说明</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF"><span class="toc-text">1.3 获取用户详细信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">1.3.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">1.3.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">1.3.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%9B%B4%E6%96%B0%E7%94%A8%E6%88%B7%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">1.4 更新用户基本信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">1.4.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">1.4.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">1.4.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%9B%B4%E6%96%B0%E7%94%A8%E6%88%B7%E5%A4%B4%E5%83%8F"><span class="toc-text">1.5 更新用户头像</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">1.5.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">1.5.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">1.5.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E6%9B%B4%E6%96%B0%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-text">1.6 更新用户密码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">1.6.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">1.6.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">1.6.3 响应数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3"><span class="toc-text">2. 文章分类相关接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%96%B0%E5%A2%9E%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB"><span class="toc-text">2.1 新增文章分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">2.1.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">2.1.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">2.1.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB%E5%88%97%E8%A1%A8"><span class="toc-text">2.2 文章分类列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">2.2.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">2.2.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">2.2.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E8%8E%B7%E5%8F%96%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB%E8%AF%A6%E6%83%85"><span class="toc-text">2.3 获取文章分类详情</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">2.3.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">2.3.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">2.3.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E6%9B%B4%E6%96%B0%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB"><span class="toc-text">2.4 更新文章分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">2.4.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">2.4.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">2.4.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB"><span class="toc-text">2.5 删除文章分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">2.5.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">2.5.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">2.5.3 响应数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%96%87%E7%AB%A0%E7%AE%A1%E7%90%86%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3"><span class="toc-text">3. 文章管理相关接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%96%B0%E5%A2%9E%E6%96%87%E7%AB%A0"><span class="toc-text">3.1 新增文章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">3.1.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">3.1.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">3.1.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8-%E6%9D%A1%E4%BB%B6%E5%88%86%E9%A1%B5"><span class="toc-text">3.2 文章列表(条件分页)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">3.2.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">3.2.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">3.2.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E8%8E%B7%E5%8F%96%E6%96%87%E7%AB%A0%E8%AF%A6%E6%83%85"><span class="toc-text">3.3 获取文章详情</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">3.3.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">3.3.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">3.3.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E6%9B%B4%E6%96%B0%E6%96%87%E7%AB%A0"><span class="toc-text">3.4 更新文章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">3.4.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">3.4.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">3.4.3 响应数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0"><span class="toc-text">3.5 删除文章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">3.5.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">3.5.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">3.5.3 响应数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%85%B6%E4%BB%96%E6%8E%A5%E5%8F%A3"><span class="toc-text">4. 其他接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-text">4.1 文件上传</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">4.1.1 基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-text">4.1.2 请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3-%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE"><span class="toc-text">4.1.3 响应数据</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="大事件接口文档-V1-0"><a href="#大事件接口文档-V1-0" class="headerlink" title="大事件接口文档-V1.0"></a>大事件接口文档-V1.0</h1><h2 id="1-用户相关接口"><a href="#1-用户相关接口" class="headerlink" title="1. 用户相关接口"></a>1. 用户相关接口</h2><h3 id="1-1-注册"><a href="#1-1-注册" class="headerlink" title="1.1 注册"></a>1.1 注册</h3><h4 id="1-1-1-基本信息"><a href="#1-1-1-基本信息" class="headerlink" title="1.1.1 基本信息"></a>1.1.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;user&#x2F;register</p>
+<p>请求方式：POST</p>
+<p>接口描述：该接口用于注册新用户</p>
+</blockquote>
+<h4 id="1-1-2-请求参数"><a href="#1-1-2-请求参数" class="headerlink" title="1.1.2 请求参数"></a>1.1.2 请求参数</h4><p>请求参数格式：x-www-form-urlencoded</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>username</td>
+<td>用户名</td>
+<td>string</td>
+<td>是</td>
+<td>5~16位非空字符</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码</td>
+<td>string</td>
+<td>是</td>
+<td>5~16位非空字符</td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username=zhangsan&amp;password=123456</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-1-3-响应数据"><a href="#1-1-3-响应数据" class="headerlink" title="1.1.3 响应数据"></a>1.1.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-2-登录"><a href="#1-2-登录" class="headerlink" title="1.2 登录"></a>1.2 登录</h3><h4 id="1-2-1-基本信息"><a href="#1-2-1-基本信息" class="headerlink" title="1.2.1 基本信息"></a>1.2.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;user&#x2F;login</p>
+<p>请求方式：POST</p>
+<p>接口描述：该接口用于登录</p>
+</blockquote>
+<h4 id="1-2-2-请求参数"><a href="#1-2-2-请求参数" class="headerlink" title="1.2.2 请求参数"></a>1.2.2 请求参数</h4><p>请求参数格式：x-www-form-urlencoded</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>username</td>
+<td>用户名</td>
+<td>string</td>
+<td>是</td>
+<td>5~16位非空字符</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码</td>
+<td>string</td>
+<td>是</td>
+<td>5~16位非空字符</td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username=zhangsan&amp;password=123456</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-2-3-响应数据"><a href="#1-2-3-响应数据" class="headerlink" title="1.2.3 响应数据"></a>1.2.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>返回的数据,jwt令牌</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsiaWQiOjUsInVzZXJuYW1lIjoid2FuZ2JhIn0sImV4cCI6MTY5MzcxNTk3OH0.pE_RATcoF7Nm9KEp9eC3CzcBbKWAFOL0IsuMNjnZ95M&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-2-4-备注说明"><a href="#1-2-4-备注说明" class="headerlink" title="1.2.4 备注说明"></a>1.2.4 备注说明</h4><blockquote>
+<p>用户登录成功后，系统会自动下发JWT令牌，然后在后续的每次请求中，浏览器都需要在请求头header中携带到服务端，请求头的名称为 Authorization，值为 登录时下发的JWT令牌。</p>
+<p>如果检测到用户未登录，则http响应状态码为401</p>
+</blockquote>
+<h3 id="1-3-获取用户详细信息"><a href="#1-3-获取用户详细信息" class="headerlink" title="1.3 获取用户详细信息"></a>1.3 获取用户详细信息</h3><h4 id="1-3-1-基本信息"><a href="#1-3-1-基本信息" class="headerlink" title="1.3.1 基本信息"></a>1.3.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;user&#x2F;userInfo</p>
+<p>请求方式：GET</p>
+<p>接口描述：该接口用于获取当前已登录用户的详细信息</p>
+</blockquote>
+<h4 id="1-3-2-请求参数"><a href="#1-3-2-请求参数" class="headerlink" title="1.3.2 请求参数"></a>1.3.2 请求参数</h4><p>无</p>
+<h4 id="1-3-3-响应数据"><a href="#1-3-3-响应数据" class="headerlink" title="1.3.3 响应数据"></a>1.3.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+<tr>
+<td>|-id</td>
+<td>number</td>
+<td>非必须</td>
+<td></td>
+<td>主键ID</td>
+<td></td>
+</tr>
+<tr>
+<td>|-username</td>
+<td>srting</td>
+<td>非必须</td>
+<td></td>
+<td>用户名</td>
+<td></td>
+</tr>
+<tr>
+<td>|-nickname</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>昵称</td>
+<td></td>
+</tr>
+<tr>
+<td>|-email</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>邮箱</td>
+<td></td>
+</tr>
+<tr>
+<td>|-userPic</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>头像地址</td>
+<td></td>
+</tr>
+<tr>
+<td>|-createTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>创建时间</td>
+<td></td>
+</tr>
+<tr>
+<td>|-updateTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>更新时间</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wangba&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;nickname&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;userPic&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;createTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-02 22:21:31&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;updateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-02 22:21:31&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-4-更新用户基本信息"><a href="#1-4-更新用户基本信息" class="headerlink" title="1.4 更新用户基本信息"></a>1.4 更新用户基本信息</h3><h4 id="1-4-1-基本信息"><a href="#1-4-1-基本信息" class="headerlink" title="1.4.1 基本信息"></a>1.4.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;user&#x2F;update</p>
+<p>请求方式：PUT</p>
+<p>接口描述：该接口用于更新已登录用户的基本信息(除头像和密码)</p>
+</blockquote>
+<h4 id="1-4-2-请求参数"><a href="#1-4-2-请求参数" class="headerlink" title="1.4.2 请求参数"></a>1.4.2 请求参数</h4><p>请求参数格式：application&#x2F;json</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>主键ID</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td>username</td>
+<td>用户名</td>
+<td>string</td>
+<td>否</td>
+<td>5~16位非空字符</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>昵称</td>
+<td>string</td>
+<td>是</td>
+<td>1~10位非空字符</td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱</td>
+<td>string</td>
+<td>是</td>
+<td>满足邮箱的格式</td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;id&quot;:5,</span><br><span class="line">    &quot;username&quot;:&quot;wangba&quot;,</span><br><span class="line">    &quot;nickname&quot;:&quot;wb&quot;,</span><br><span class="line">    &quot;email&quot;:&quot;wb@itcast.cn&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-3-响应数据"><a href="#1-4-3-响应数据" class="headerlink" title="1.4.3 响应数据"></a>1.4.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-5-更新用户头像"><a href="#1-5-更新用户头像" class="headerlink" title="1.5 更新用户头像"></a>1.5 更新用户头像</h3><h4 id="1-5-1-基本信息"><a href="#1-5-1-基本信息" class="headerlink" title="1.5.1 基本信息"></a>1.5.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;user&#x2F;updateAvatar</p>
+<p>请求方式：PATCH</p>
+<p>接口描述：该接口用于更新已登录用户的头像</p>
+</blockquote>
+<h4 id="1-5-2-请求参数"><a href="#1-5-2-请求参数" class="headerlink" title="1.5.2 请求参数"></a>1.5.2 请求参数</h4><p>请求参数格式：queryString</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>avatarUrl</td>
+<td>头像地址</td>
+<td>string</td>
+<td>是</td>
+<td>url地址</td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">avatarUrl=</span><br><span class="line">https://big-event-gwd.oss-cn-beijing.aliyuncs.com/9bf1cf5b-1420-4c1b-91ad-e0f4631cbed4.png</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-5-3-响应数据"><a href="#1-5-3-响应数据" class="headerlink" title="1.5.3 响应数据"></a>1.5.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-6-更新用户密码"><a href="#1-6-更新用户密码" class="headerlink" title="1.6 更新用户密码"></a>1.6 更新用户密码</h3><h4 id="1-6-1-基本信息"><a href="#1-6-1-基本信息" class="headerlink" title="1.6.1 基本信息"></a>1.6.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;user&#x2F;updatePwd</p>
+<p>请求方式：PATCH</p>
+<p>接口描述：该接口用于更新已登录用户的密码</p>
+</blockquote>
+<h4 id="1-6-2-请求参数"><a href="#1-6-2-请求参数" class="headerlink" title="1.6.2 请求参数"></a>1.6.2 请求参数</h4><p>请求参数格式：application&#x2F;json</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>old_pwd</td>
+<td>原密码</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td>new_pwd</td>
+<td>新密码</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td>re_pwd</td>
+<td>确认新密码</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;old_pwd&quot;</span><span class="punctuation">:</span><span class="string">&quot;123456&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;new_pwd&quot;</span><span class="punctuation">:</span><span class="string">&quot;234567&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;re_pwd&quot;</span><span class="punctuation">:</span><span class="string">&quot;234567&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-6-3-响应数据"><a href="#1-6-3-响应数据" class="headerlink" title="1.6.3 响应数据"></a>1.6.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-文章分类相关接口"><a href="#2-文章分类相关接口" class="headerlink" title="2. 文章分类相关接口"></a>2. 文章分类相关接口</h2><h3 id="2-1-新增文章分类"><a href="#2-1-新增文章分类" class="headerlink" title="2.1 新增文章分类"></a>2.1 新增文章分类</h3><h4 id="2-1-1-基本信息"><a href="#2-1-1-基本信息" class="headerlink" title="2.1.1 基本信息"></a>2.1.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;category</p>
+<p>请求方式：POST</p>
+<p>接口描述：该接口用于新增文章分类</p>
+</blockquote>
+<h4 id="2-1-2-请求参数"><a href="#2-1-2-请求参数" class="headerlink" title="2.1.2 请求参数"></a>2.1.2 请求参数</h4><p>请求参数格式：application&#x2F;json</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>categoryName</td>
+<td>分类名称</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td>categoryAlias</td>
+<td>分类别名</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;categoryName&quot;</span><span class="punctuation">:</span><span class="string">&quot;人文&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;categoryAlias&quot;</span><span class="punctuation">:</span><span class="string">&quot;rw&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-3-响应数据"><a href="#2-1-3-响应数据" class="headerlink" title="2.1.3 响应数据"></a>2.1.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-2-文章分类列表"><a href="#2-2-文章分类列表" class="headerlink" title="2.2 文章分类列表"></a>2.2 文章分类列表</h3><h4 id="2-2-1-基本信息"><a href="#2-2-1-基本信息" class="headerlink" title="2.2.1 基本信息"></a>2.2.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;category</p>
+<p>请求方式：GET</p>
+<p>接口描述：该接口用于获取当前已登录用户创建的所有文章分类</p>
+</blockquote>
+<h4 id="2-2-2-请求参数"><a href="#2-2-2-请求参数" class="headerlink" title="2.2.2 请求参数"></a>2.2.2 请求参数</h4><p>无</p>
+<h4 id="2-2-3-响应数据"><a href="#2-2-3-响应数据" class="headerlink" title="2.2.3 响应数据"></a>2.2.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+<tr>
+<td>|-id</td>
+<td>number</td>
+<td>非必须</td>
+<td></td>
+<td>主键ID</td>
+<td></td>
+</tr>
+<tr>
+<td>|-categoryName</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>分类名称</td>
+<td></td>
+</tr>
+<tr>
+<td>|-categoryAlias</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>分类别名</td>
+<td></td>
+</tr>
+<tr>
+<td>|-createTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>创建时间</td>
+<td></td>
+</tr>
+<tr>
+<td>|-updateTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>修改时间</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;categoryName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;美食&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;categoryAlias&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;createTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-02 12:06:59&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;updateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-02 12:06:59&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;categoryName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;娱乐&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;categoryAlias&quot;</span><span class="punctuation">:</span> <span class="string">&quot;yl&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;createTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-02 12:08:16&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;updateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-02 12:08:16&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;categoryName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;军事&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;categoryAlias&quot;</span><span class="punctuation">:</span> <span class="string">&quot;js&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;createTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-02 12:08:33&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;updateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-02 12:08:33&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-3-获取文章分类详情"><a href="#2-3-获取文章分类详情" class="headerlink" title="2.3 获取文章分类详情"></a>2.3 获取文章分类详情</h3><h4 id="2-3-1-基本信息"><a href="#2-3-1-基本信息" class="headerlink" title="2.3.1 基本信息"></a>2.3.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;category&#x2F;detail</p>
+<p>请求方式：GET</p>
+<p>接口描述：该接口用于根据ID获取文章分类详情</p>
+</blockquote>
+<h4 id="2-3-2-请求参数"><a href="#2-3-2-请求参数" class="headerlink" title="2.3.2 请求参数"></a>2.3.2 请求参数</h4><p>请求参数格式：queryString</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>主键ID</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=6</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-3-响应数据"><a href="#2-3-3-响应数据" class="headerlink" title="2.3.3 响应数据"></a>2.3.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+<tr>
+<td>|-id</td>
+<td>number</td>
+<td>非必须</td>
+<td></td>
+<td>主键ID</td>
+<td></td>
+</tr>
+<tr>
+<td>|-categoryName</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>分类名称</td>
+<td></td>
+</tr>
+<tr>
+<td>|-categoryAlias</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>分类别名</td>
+<td></td>
+</tr>
+<tr>
+<td>|-createTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>创建时间</td>
+<td></td>
+</tr>
+<tr>
+<td>|-updateTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>修改时间</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">6</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;categoryName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;风土人情&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;categoryAlias&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ftrq&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;createTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-03 11:07:13&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;updateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-03 11:13:39&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-4-更新文章分类"><a href="#2-4-更新文章分类" class="headerlink" title="2.4 更新文章分类"></a>2.4 更新文章分类</h3><h4 id="2-4-1-基本信息"><a href="#2-4-1-基本信息" class="headerlink" title="2.4.1 基本信息"></a>2.4.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;category</p>
+<p>请求方式：PUT</p>
+<p>接口描述：该接口用于更新文章分类</p>
+</blockquote>
+<h4 id="2-4-2-请求参数"><a href="#2-4-2-请求参数" class="headerlink" title="2.4.2 请求参数"></a>2.4.2 请求参数</h4><p>请求参数格式：application&#x2F;json</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>主键ID</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td>categoryName</td>
+<td>分类名称</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+</tr>
+<tr>
+<td>categoryAlias</td>
+<td>分类别名</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span><span class="number">6</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;categoryName&quot;</span><span class="punctuation">:</span><span class="string">&quot;风土人情&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;categoryAlias&quot;</span><span class="punctuation">:</span><span class="string">&quot;ftrq&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-3-响应数据"><a href="#2-4-3-响应数据" class="headerlink" title="2.4.3 响应数据"></a>2.4.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-5-删除文章分类"><a href="#2-5-删除文章分类" class="headerlink" title="2.5 删除文章分类"></a>2.5 删除文章分类</h3><h4 id="2-5-1-基本信息"><a href="#2-5-1-基本信息" class="headerlink" title="2.5.1 基本信息"></a>2.5.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;category</p>
+<p>请求方式：DELETE</p>
+<p>接口描述：该接口用于根据ID删除文章分类</p>
+</blockquote>
+<h4 id="2-5-2-请求参数"><a href="#2-5-2-请求参数" class="headerlink" title="2.5.2 请求参数"></a>2.5.2 请求参数</h4><p>请求参数格式：queryString</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>主键ID</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=6</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-5-3-响应数据"><a href="#2-5-3-响应数据" class="headerlink" title="2.5.3 响应数据"></a>2.5.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-文章管理相关接口"><a href="#3-文章管理相关接口" class="headerlink" title="3. 文章管理相关接口"></a>3. 文章管理相关接口</h2><h3 id="3-1-新增文章"><a href="#3-1-新增文章" class="headerlink" title="3.1 新增文章"></a>3.1 新增文章</h3><h4 id="3-1-1-基本信息"><a href="#3-1-1-基本信息" class="headerlink" title="3.1.1 基本信息"></a>3.1.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;article</p>
+<p>请求方式：POST</p>
+<p>接口描述：该接口用于新增文章(发布文章)</p>
+</blockquote>
+<h4 id="3-1-2-请求参数"><a href="#3-1-2-请求参数" class="headerlink" title="3.1.2 请求参数"></a>3.1.2 请求参数</h4><p>请求参数格式：application&#x2F;json</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>文章标题</td>
+<td>string</td>
+<td>是</td>
+<td>1~10个非空字符</td>
+<td></td>
+</tr>
+<tr>
+<td>content</td>
+<td>文章正文</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>coverImg</td>
+<td>封面图像地址</td>
+<td>string</td>
+<td>是</td>
+<td>必须是url地址</td>
+<td></td>
+</tr>
+<tr>
+<td>state</td>
+<td>发布状态</td>
+<td>string</td>
+<td>是</td>
+<td>已发布 | 草稿</td>
+<td></td>
+</tr>
+<tr>
+<td>categoryId</td>
+<td>文章分类ID</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;陕西旅游攻略&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;兵马俑,华清池,法门寺,华山...爱去哪去哪...&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;coverImg&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://big-event-gwd.oss-cn-beijing.aliyuncs.com/9bf1cf5b-1420-4c1b-91ad-e0f4631cbed4.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;state&quot;</span><span class="punctuation">:</span> <span class="string">&quot;草稿&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;categoryId&quot;</span><span class="punctuation">:</span> <span class="number">2</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-1-3-响应数据"><a href="#3-1-3-响应数据" class="headerlink" title="3.1.3 响应数据"></a>3.1.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-2-文章列表-条件分页"><a href="#3-2-文章列表-条件分页" class="headerlink" title="3.2 文章列表(条件分页)"></a>3.2 文章列表(条件分页)</h3><h4 id="3-2-1-基本信息"><a href="#3-2-1-基本信息" class="headerlink" title="3.2.1 基本信息"></a>3.2.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;article</p>
+<p>请求方式：GET</p>
+<p>接口描述：该接口用于根据条件查询文章,带分页</p>
+</blockquote>
+<h4 id="3-2-2-请求参数"><a href="#3-2-2-请求参数" class="headerlink" title="3.2.2 请求参数"></a>3.2.2 请求参数</h4><p>请求参数格式：queryString</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pageNum</td>
+<td>当前页码</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>每页条数</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>categoryId</td>
+<td>文章分类ID</td>
+<td>number</td>
+<td>否</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>state</td>
+<td>发布状态</td>
+<td>string</td>
+<td>否</td>
+<td>已发布 | 草稿</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pageNum=1&amp;pageSize=3&amp;categoryId=2&amp;state=草稿</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-3-响应数据"><a href="#3-2-3-响应数据" class="headerlink" title="3.2.3 响应数据"></a>3.2.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+<tr>
+<td>|-total</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>总记录数</td>
+<td></td>
+</tr>
+<tr>
+<td>|-items</td>
+<td>array</td>
+<td>必须</td>
+<td></td>
+<td>数据列表</td>
+<td></td>
+</tr>
+<tr>
+<td>|-id</td>
+<td>number</td>
+<td>非必须</td>
+<td></td>
+<td>主键ID</td>
+<td></td>
+</tr>
+<tr>
+<td>|-title</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>文章标题</td>
+<td></td>
+</tr>
+<tr>
+<td>|-content</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>文章正文</td>
+<td></td>
+</tr>
+<tr>
+<td>|-coverImg</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>文章封面图像地址</td>
+<td></td>
+</tr>
+<tr>
+<td>|-state</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>发布状态</td>
+<td>已发布|草稿</td>
+</tr>
+<tr>
+<td>|-categoryId</td>
+<td>number</td>
+<td>非必须</td>
+<td></td>
+<td>文章分类ID</td>
+<td></td>
+</tr>
+<tr>
+<td>|-createTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>创建时间</td>
+<td></td>
+</tr>
+<tr>
+<td>|-updateTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>更新时间</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;items&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;陕西旅游攻略&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;兵马俑,华清池,法门寺,华山...爱去哪去哪...&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;coverImg&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://big-event-gwd.oss-cn-beijing.aliyuncs.com/9bf1cf5b-1420-4c1b-91ad-e0f4631cbed4.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;state&quot;</span><span class="punctuation">:</span> <span class="string">&quot;草稿&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;categoryId&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;createTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-03 11:55:30&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;updateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-03 11:55:30&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="3-3-获取文章详情"><a href="#3-3-获取文章详情" class="headerlink" title="3.3 获取文章详情"></a>3.3 获取文章详情</h3><h4 id="3-3-1-基本信息"><a href="#3-3-1-基本信息" class="headerlink" title="3.3.1 基本信息"></a>3.3.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;article&#x2F;detail</p>
+<p>请求方式：GET</p>
+<p>接口描述：该接口用于根据ID获取文章详细信息</p>
+</blockquote>
+<h4 id="3-3-2-请求参数"><a href="#3-3-2-请求参数" class="headerlink" title="3.3.2 请求参数"></a>3.3.2 请求参数</h4><p>请求参数格式：queryString</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>主键ID</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=4</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-3-响应数据"><a href="#3-3-3-响应数据" class="headerlink" title="3.3.3 响应数据"></a>3.3.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+<tr>
+<td>|-id</td>
+<td>number</td>
+<td>非必须</td>
+<td></td>
+<td>主键ID</td>
+<td></td>
+</tr>
+<tr>
+<td>|-title</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>文章标题</td>
+<td></td>
+</tr>
+<tr>
+<td>|-content</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>文章正文</td>
+<td></td>
+</tr>
+<tr>
+<td>|-coverImg</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>文章封面图像地址</td>
+<td></td>
+</tr>
+<tr>
+<td>|-state</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>发布状态</td>
+<td>已发布|草稿</td>
+</tr>
+<tr>
+<td>|-categoryId</td>
+<td>number</td>
+<td>非必须</td>
+<td></td>
+<td>文章分类ID</td>
+<td></td>
+</tr>
+<tr>
+<td>|-createTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>创建时间</td>
+<td></td>
+</tr>
+<tr>
+<td>|-updateTime</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>更新时间</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;北京旅游攻略&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;天安门,颐和园,鸟巢,长城...爱去哪去哪...&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;coverImg&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://big-event-gwd.oss-cn-beijing.aliyuncs.com/9bf1cf5b-1420-4c1b-91ad-e0f4631cbed4.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;state&quot;</span><span class="punctuation">:</span> <span class="string">&quot;已发布&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;categoryId&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;createTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-03 11:35:04&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;updateTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2023-09-03 11:40:31&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-4-更新文章"><a href="#3-4-更新文章" class="headerlink" title="3.4 更新文章"></a>3.4 更新文章</h3><h4 id="3-4-1-基本信息"><a href="#3-4-1-基本信息" class="headerlink" title="3.4.1 基本信息"></a>3.4.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;article</p>
+<p>请求方式：PUT</p>
+<p>接口描述：该接口用于更新文章信息</p>
+</blockquote>
+<h4 id="3-4-2-请求参数"><a href="#3-4-2-请求参数" class="headerlink" title="3.4.2 请求参数"></a>3.4.2 请求参数</h4><p>请求参数格式：application&#x2F;json</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>主键ID</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>文章标题</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>content</td>
+<td>文章正文</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>coverImg</td>
+<td>封面图像地址</td>
+<td>string</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>state</td>
+<td>发布状态</td>
+<td>string</td>
+<td>是</td>
+<td>已发布 | 草稿</td>
+<td></td>
+</tr>
+<tr>
+<td>categoryId</td>
+<td>文章分类ID</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span><span class="number">4</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;北京旅游攻略&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;天安门,颐和园,鸟巢,长城...爱去哪去哪...&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;coverImg&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://big-event-gwd.oss-cn-beijing.aliyuncs.com/9bf1cf5b-1420-4c1b-91ad-e0f4631cbed4.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;state&quot;</span><span class="punctuation">:</span> <span class="string">&quot;已发布&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;categoryId&quot;</span><span class="punctuation">:</span> <span class="number">2</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-3-响应数据"><a href="#3-4-3-响应数据" class="headerlink" title="3.4.3 响应数据"></a>3.4.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="3-5-删除文章"><a href="#3-5-删除文章" class="headerlink" title="3.5 删除文章"></a>3.5 删除文章</h3><h4 id="3-5-1-基本信息"><a href="#3-5-1-基本信息" class="headerlink" title="3.5.1 基本信息"></a>3.5.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;article</p>
+<p>请求方式：DELETE</p>
+<p>接口描述：该接口用于根据ID删除文章</p>
+</blockquote>
+<h4 id="3-5-2-请求参数"><a href="#3-5-2-请求参数" class="headerlink" title="3.5.2 请求参数"></a>3.5.2 请求参数</h4><p>请求参数格式：queryString</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>主键ID</td>
+<td>number</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=4</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5-3-响应数据"><a href="#3-5-3-响应数据" class="headerlink" title="3.5.3 响应数据"></a>3.5.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>非必须</td>
+<td></td>
+<td>返回的数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="4-其他接口"><a href="#4-其他接口" class="headerlink" title="4. 其他接口"></a>4. 其他接口</h2><h3 id="4-1-文件上传"><a href="#4-1-文件上传" class="headerlink" title="4.1 文件上传"></a>4.1 文件上传</h3><h4 id="4-1-1-基本信息"><a href="#4-1-1-基本信息" class="headerlink" title="4.1.1 基本信息"></a>4.1.1 基本信息</h4><blockquote>
+<p>请求路径：&#x2F;upload</p>
+<p>请求方式：POST</p>
+<p>接口描述：该接口用于上传文件(单文件)</p>
+</blockquote>
+<h4 id="4-1-2-请求参数"><a href="#4-1-2-请求参数" class="headerlink" title="4.1.2 请求参数"></a>4.1.2 请求参数</h4><p>请求参数格式：multipart&#x2F;form-data</p>
+<p>请求参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>备注</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>file</td>
+<td>表单中文件请求参数的名字</td>
+<td>file</td>
+<td>是</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>请求数据样例：</p>
+<p>无</p>
+<h4 id="4-1-3-响应数据"><a href="#4-1-3-响应数据" class="headerlink" title="4.1.3 响应数据"></a>4.1.3 响应数据</h4><p>响应数据类型：application&#x2F;json</p>
+<p>响应参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+<th>其他信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>number</td>
+<td>必须</td>
+<td></td>
+<td>响应码, 0-成功,1-失败</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>非必须</td>
+<td></td>
+<td>提示信息</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>必须</td>
+<td></td>
+<td>图像在阿里云上的存储地址</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>响应数据样例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://big-event-gwd.oss-cn-beijing.aliyuncs.com/b5811871-acc8-4583-8399-cf0dc73591ab.png&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
