@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>URL + Base64 解码 JSON 工具</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">URL + Base64 解码 JSON 工具</h1>
+      <p class="subtitle">按顺序执行：UrlDecode → Base64 → JSON 格式化</p>
+    </header>
+
+    <main class="container">
+      <section class="pane left">
+        <div class="label-row">
+          <label for="inputRaw" class="label">输入</label>
+          <button class="btn ghost label-placeholder" aria-hidden="true" tabindex="-1">占位</button>
+        </div>
+        <textarea id="inputRaw" class="textarea" placeholder="在此粘贴或输入要解码的字符串"></textarea>
+
+        <div class="controls">
+          <label class="checkbox">
+            <input id="autoDecode" type="checkbox" checked /> 自动解码
+          </label>
+          <div class="buttons">
+            <button id="btnDecode" class="btn primary">解码</button>
+            <button id="btnClear" class="btn">清空</button>
+            <button id="btnExample" class="btn">示例</button>
+          </div>
+        </div>
+
+        <small class="hint">说明：会先 UrlDecode，再 Base64 解码，最后按 JSON 美化输出。</small>
+      </section>
+
+      <section class="pane right">
+        <div class="label-row">
+          <span class="label">结果</span>
+          <button id="btnCopy" class="btn ghost">复制结果</button>
+        </div>
+        <div id="errorBox" class="notice" aria-live="polite"></div>
+        <pre id="outputJson" class="code" tabindex="0" aria-label="格式化的 JSON 输出"></pre>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+
