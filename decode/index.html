@@ -3,14 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>URL + Base64 解码 JSON 工具</title>
+    <title>测试工具集</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="header">
-      <h1 class="title">URL + Base64 解码 JSON 工具</h1>
-      <p class="subtitle">按顺序执行：UrlDecode → Base64 → JSON 格式化</p>
-    </header>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="nav-title">测试工具集</h1>
+        <div class="nav-tabs">
+          <button class="nav-tab active" data-tool="url-base64">URL + Base64 解码 JSON</button>
+          <button class="nav-tab" data-tool="random-generator">随机字符生成器</button>
+          <button class="nav-tab" data-tool="char-counter">字符长度统计</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- URL + Base64 解码 JSON 工具 -->
+    <div id="url-base64-tool" class="tool-container active">
+      <header class="header">
+        <h2 class="title">URL + Base64 解码 JSON 工具</h2>
+        <p class="subtitle">按顺序执行：UrlDecode → Base64 → JSON 格式化</p>
+      </header>
 
     <main class="container">
       <section class="pane left">
@@ -43,6 +57,108 @@
         <pre id="outputJson" class="code" tabindex="0" aria-label="格式化的 JSON 输出"></pre>
       </section>
     </main>
+    </div>
+
+    <!-- 随机字符生成器工具 -->
+    <div id="random-generator-tool" class="tool-container">
+      <header class="header">
+        <h2 class="title">随机字符生成器</h2>
+        <p class="subtitle">生成包含中文、英文大小写、特殊字符的随机字符串</p>
+      </header>
+      
+      <main class="container">
+        <section class="pane left">
+          <div class="label-row">
+            <label for="lengthInput" class="label">字符长度</label>
+            <button class="btn ghost label-placeholder" aria-hidden="true" tabindex="-1">占位</button>
+          </div>
+          <input id="lengthInput" type="number" class="input" placeholder="输入要生成的字符长度" min="1" max="1000" value="20">
+          
+          <div class="controls">
+            <label class="checkbox">
+              <input id="includeChinese" type="checkbox" checked /> 包含中文
+            </label>
+            <label class="checkbox">
+              <input id="includeEnglish" type="checkbox" checked /> 包含英文
+            </label>
+            <label class="checkbox">
+              <input id="includeNumbers" type="checkbox" checked /> 包含数字
+            </label>
+            <label class="checkbox">
+              <input id="includeSpecial" type="checkbox" checked /> 包含特殊字符
+            </label>
+          </div>
+          
+          <div class="buttons">
+            <button id="btnGenerate" class="btn primary">生成随机字符串</button>
+            <button id="btnClearGenerator" class="btn">清空</button>
+          </div>
+        </section>
+        
+        <section class="pane right">
+          <div class="label-row">
+            <span class="label">生成的字符串</span>
+            <button id="btnCopyGenerator" class="btn ghost">复制结果</button>
+          </div>
+          <textarea id="generatedText" class="textarea" placeholder="生成的随机字符串将显示在这里" readonly></textarea>
+        </section>
+      </main>
+    </div>
+
+    <!-- 字符长度统计工具 -->
+    <div id="char-counter-tool" class="tool-container">
+      <header class="header">
+        <h2 class="title">字符长度统计</h2>
+        <p class="subtitle">统计输入文本的字符长度（支持中文、英文、特殊字符）</p>
+      </header>
+      
+      <main class="container">
+        <section class="pane left">
+          <div class="label-row">
+            <label for="counterInput" class="label">输入文本</label>
+            <button class="btn ghost label-placeholder" aria-hidden="true" tabindex="-1">占位</button>
+          </div>
+          <textarea id="counterInput" class="textarea" placeholder="在此输入要统计长度的文本"></textarea>
+          
+          <div class="buttons">
+            <button id="btnClearCounter" class="btn">清空</button>
+          </div>
+        </section>
+        
+        <section class="pane right">
+          <div class="label-row">
+            <span class="label">统计结果</span>
+            <button class="btn ghost label-placeholder" aria-hidden="true" tabindex="-1">占位</button>
+          </div>
+          <div id="counterResult" class="counter-result">
+            <div class="counter-item">
+              <span class="counter-label">总字符数：</span>
+              <span id="totalChars" class="counter-value">0</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-label">中文字符：</span>
+              <span id="chineseChars" class="counter-value">0</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-label">英文字符：</span>
+              <span id="englishChars" class="counter-value">0</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-label">数字字符：</span>
+              <span id="numberChars" class="counter-value">0</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-label">特殊字符：</span>
+              <span id="specialChars" class="counter-value">0</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-label">空格数量：</span>
+              <span id="spaceChars" class="counter-value">0</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
 
     <script src="./script.js"></script>
   </body>

@@ -22,6 +22,70 @@ body {
   color: var(--text);
 }
 
+/* 导航栏样式 */
+.navbar {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 20px;
+}
+
+.nav-title {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-tab {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-tab:hover {
+  background: var(--bg-soft);
+  border-color: var(--primary);
+}
+
+.nav-tab.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* 工具容器样式 */
+.tool-container {
+  display: none;
+  min-height: calc(100vh - 120px);
+}
+
+.tool-container.active {
+  display: block;
+}
+
 .header { padding: 24px 20px 8px; }
 .title { margin: 0; font-size: 22px; font-weight: 700; }
 .subtitle { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
@@ -117,8 +181,104 @@ body {
 
 .footer { padding: 6px 20px 18px; color: var(--muted); font-size: 12px; }
 
+/* 输入框样式 */
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* 字符统计结果样式 */
+.counter-result {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  min-height: 260px;
+}
+
+.counter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.counter-item:last-child {
+  border-bottom: none;
+}
+
+.counter-label {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.counter-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* 复选框组样式 */
+.controls {
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.checkbox {
+  user-select: none;
+  color: var(--text);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  background: var(--bg-soft);
+  transition: background-color 0.2s ease;
+}
+
+.checkbox:hover {
+  background: var(--border);
+}
+
+.checkbox input[type="checkbox"] {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* 响应式设计 */
 @media (max-width: 960px) {
   .container { grid-template-columns: 1fr; }
+  .nav-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-tab {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  .controls {
+    grid-template-columns: 1fr;
+  }
 }
 
 
